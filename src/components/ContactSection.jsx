@@ -1,12 +1,12 @@
 import {
   Instagram,
   Linkedin,
+  Facebook,
   Mail,
   MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
+
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -48,18 +48,18 @@ export const ContactSection = () => {
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6 ">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Email</h4>
+                  <h4 className="font-medium text-left"> Email</h4>
                   <a
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    norbugyeltshen2003@gmail.com
                   </a>
                 </div>
               </div>
@@ -68,12 +68,12 @@ export const ContactSection = () => {
                   <Phone className="h-6 w-6 text-primary" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Phone</h4>
+                  <h4 className="font-medium text-left"> Phone</h4>
                   <a
                     href="tel:+11234567890"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +1 (123) 456-7890
+                    +91 637 929 1819
                   </a>
                 </div>
               </div>
@@ -82,9 +82,9 @@ export const ContactSection = () => {
                   <MapPin className="h-6 w-6 text-primary" />{" "}
                 </div>
                 <div>
-                  <h4 className="font-medium"> Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
+                  <h4 className="font-medium text-left"> Location</h4>
+                  <a className="text-muted-foreground hover:text-primary transition-colors ">
+                    Vellore Institute of Technology, Chennai, India
                   </a>
                 </div>
               </div>
@@ -93,17 +93,14 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/norbu-gyeltshen-484ba61b9/" target="_blank">
                   <Linkedin />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/nor_gyel03/" target="_blank">
                   <Instagram />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitch />
+                <a href="https://www.facebook.com/norbu.gyeltshen.9678/" target="_blank">
+                  <Facebook />
                 </a>
               </div>
             </div>
@@ -113,70 +110,58 @@ export const ContactSection = () => {
             className="bg-card p-8 rounded-lg shadow-xs"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6">Feature Coming Soon...</h3>
 
             <form className="space-y-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  disabled
+                  className="w-full px-4 py-3 rounded-md border border-input bg-gray-200 cursor-not-allowed"
+                  placeholder="FirstName LastName"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Your Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
+                  disabled
+                  className="w-full px-4 py-3 rounded-md border border-input bg-gray-200 cursor-not-allowed"
+                  placeholder="example_email@gmail.com"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Your Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
+                  disabled
+                  className="w-full px-4 py-3 rounded-md border border-input bg-gray-200 cursor-not-allowed resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "cosmic-button w-full flex items-center justify-center gap-2 opacity-50 cursor-not-allowed"
                 )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                Send Message
                 <Send size={16} />
               </button>
             </form>

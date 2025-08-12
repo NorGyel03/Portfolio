@@ -3,24 +3,24 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "6-DOF Robotic Manipulator Arm",
+    description: "Engineered a six-degree-of-freedom robotic arm capable of voice and remote control, integrated with computer vision and machine learning for intelligent waste segregation. Designed for versatility in automation, industrial tasks, and research applications.",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
+    tags: ["Embedded Systems", "Computer Vision", "AI/ ML", "Python", "HCI", "Robotics"],
     demoUrl: "#",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "ALPR + Voice-Over Speed Detection System",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "Created a multi-modal AI system that uses optical character recognition (OCR) for automatic license plate recognition and audio signal processing to detect vehicle overspeeding. Enhances traffic surveillance through real-time monitoring and intelligent alerting.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+    tags: ["OpenCV/ OCR", "Intelligent Systems", "Python", "AI/ML"],
     demoUrl: "#",
     githubUrl: "#",
   },
-  {
+/*  {
     id: 3,
     title: "E-commerce Platform",
     description:
@@ -30,6 +30,7 @@ const projects = [
     demoUrl: "#",
     githubUrl: "#",
   },
+  */
 ];
 
 export const ProjectsSection = () => {
@@ -100,7 +101,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/NorGyel03"
           >
             Check My Github <ArrowRight size={16} />
           </a>
