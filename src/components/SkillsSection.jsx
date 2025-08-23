@@ -1,87 +1,44 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-
 const skills = [
   // -------------------- Programming & Web Development --------------------
-  { name: "HTML/CSS", level: 90, category: "Web Dev" },
-  { name: "JavaScript", level: 80, category: "Web Dev" },
+  { name: "Python", level: 90, category: "Languages" },
+  { name: "C/C++", level: 88, category: "Languages" },
+  { name: "Java", level: 75, category: "Languages" },
+  { name: "JavaScript/TypeScript", level: 80, category: "Web Dev" },
   { name: "ReactJS", level: 78, category: "Web Dev" },
   { name: "NodeJS", level: 72, category: "Web Dev" },
   { name: "Tailwind CSS", level: 80, category: "Web Dev" },
-  { name: "MySQL", level: 80, category: "Web Dev" },
-  { name: "PHP", level: 80, category: "Web Dev" },
-  { name: "Flask/ Streamlit", level: 80, category: "Web Dev" },
-  
-  { name: "C", level: 80, category: "Languages" },
-  { name: "C++", level: 90, category: "Languages" },
-  { name: "Python", level: 90, category: "Languages" },
-  { name: "Java", level: 75, category: "Languages" },
-  { name: "R", level: 70, category: "Languages" },
-  { name: "Assembly Language", level: 80, category: "Languages" },
-  { name: "Matlab", level: 75, category: "Languages" },
-  
+  { name: "MySQL/PHP", level: 78, category: "Web Dev" },
+
   // -------------------- AI & Machine Learning --------------------
-  { name: "Machine Learning", level: 85, category: "AI/ ML" },
-  { name: "Deep Learning", level: 80, category: "AI/ ML" },
-  { name: "Neural Networks (CNN, RNN, LSTM, Transformer)", level: 78, category: "AI/ ML" },
-  { name: "Computer Vision (OpenCV, YOLO, SORT, MiDaS)", level: 82, category: "AI/ ML" },
-  { name: "Natural Language Processing (NLP)", level: 75, category: "AI/ ML" },
-  { name: "Generative AI (LLMs, Chatbot)", level: 80, category: "AI/ ML" },
-  { name: "Few-Shot Learning", level: 70, category: "AI/ ML" },
-  { name: "Transfer Learning ", level: 75, category: "AI/ ML" },
-  { name: "Anomaly Detection", level: 78, category: "AI/ ML" },
-  { name: "Edge AI Deployment", level: 72, category: "AI/ ML" },
-  { name: "PyTorch", level: 80, category: "AI/ ML" },
-  { name: "TensorFlow / Keras", level: 78, category: "AI/ ML" },
-  { name: "Scikit-learn", level: 85, category: "AI/ ML" },
-  { name: "Hugging Face Transformer", level: 75, category: "AI/ ML" },
-
-
+  { name: "Machine & Deep Learning", level: 85, category: "AI/ML" },
+  { name: "Computer Vision (OpenCV, YOLO)", level: 82, category: "AI/ML" },
+  { name: "NLP & Generative AI", level: 78, category: "AI/ML" },
+  { name: "TensorFlow / PyTorch", level: 80, category: "AI/ML" },
+  { name: "Scikit-learn", level: 85, category: "AI/ML" },
 
   // -------------------- Robotics & Embedded Systems --------------------
-  { name: "ROS (Robot Operating System)", level: 70, category: "Robotics/ Embedded Systems" },
-  { name: "Arduino", level: 80, category: "Robotics/ Embedded Systems" },
-  { name: "ESP32", level: 75, category: "Robotics/ Embedded Systems" },
-  { name: "Raspberry Pi", level: 78, category: "Robotics/ Embedded Systems" },
-  { name: "Path Planning", level: 70, category: "Robotics/ Embedded Systems" },
-  { name: "Gazebo Simulation", level: 65, category: "Robotics/ Embedded Systems" },
-  { name: "Servo and Motor Control", level: 60, category: "Robotics/ Embedded Systems" },
-  { name: "Wireless Communication (Bluetooth, Wi-Fi, MQTT)", level: 60, category: "Robotics/ Embedded Systems" },
-  { name: "Sensor Integration (Ultrasonic, IR, Camera)", level: 60, category: "Robotics/ Embedded Systems" },
-  { name: "CoppeliaSim", level: 60, category: "Robotics/ Embedded Systems" },
+  { name: "Robotics (ROS, Gazebo, CoppeliaSim)", level: 70, category: "Robotics" },
+  { name: "Arduino & ESP32", level: 80, category: "Robotics" },
+  { name: "Raspberry Pi", level: 78, category: "Robotics" },
+  { name: "3D Design & Printing (Fusion 360, SolidWorks)", level: 75, category: "Robotics" },
 
+  // -------------------- Tools --------------------
+  { name: "Git/GitHub", level: 78, category: "Tools" },
+  { name: "AWS", level: 75, category: "Tools" },
+  { name: "Docker", level: 70, category: "Tools" },
+  { name: "Linux OS/ Kali Linux", level: 82, category: "Tools" },
+  { name: "UiPath Studio", level: 80, category: "Tools" },
 
-
-
-  // -------------------- Tools & Soft Skills --------------------
-  { name: "Git/GitHub", level: 65, category: "Tools" },
-  { name: "AWS", level: 78, category: "Tools" },
-  { name: "Cisco Packet Tracer", level: 75, category: "Tools" },
-  { name: "Matlab", level: 70, category: "Tools" },
-  { name: "UiPath Studio", level: 82, category: "Tools" },
-  { name: "LTSpiceXVII", level: 68, category: "Tools" },
-  { name: "Jupyter Notebook", level: 85, category: "Tools" },
-  { name: "VS Code", level: 90, category: "Tools" },
-  { name: "Arduino IDE", level: 95, category: "Tools" },
-  { name: "Keil uVision5", level: 75, category: "Tools" },
-  { name: "Linux OS", level: 85, category: "Tools" },
-  { name: "ProjectLibre/ StarUML", level: 95, category: "Tools" },
-
-
+  // -------------------- Soft Skills --------------------
   { name: "Problem-Solving", level: 90, category: "SoftSkills" },
-  { name: "Critical Thinking", level: 88, category: "SoftSkills" },
   { name: "Team Collaboration", level: 85, category: "SoftSkills" },
-  { name: "Adaptability", level: 85, category: "SoftSkills" },
-  { name: "Communication", level: 88, category: "SoftSkills" },
   { name: "Leadership", level: 82, category: "SoftSkills" },
-  { name: "Time Management", level: 80, category: "SoftSkills" },
   { name: "Creativity & Innovation", level: 85, category: "SoftSkills" },
-  { name: "Strategic Thinking", level: 80, category: "SoftSkills" },
-  { name: "Attention to Detail", level: 82, category: "SoftSkills" },
-
 ];
 
-const categories = ["All", "Languages" ,"Web Dev", "AI/ ML", "Robotics/ Embedded Systems", "Tools", "SoftSkills"];
+const categories = ["All", "Languages", "Web Dev", "AI/ML", "Robotics", "Tools", "SoftSkills"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
