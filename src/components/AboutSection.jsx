@@ -78,10 +78,10 @@ export const AboutSection = () => {
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">Full Stack Development</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from ideation to deployment using agile methodologies, 
-                    ensuring timely delivery and quality outcomes.
+                    With a strong interest in full stack development, I specialize in
+                     integrating AI models into web applications and deploying them to create intelligent, user-friendly solutions.
                   </p>
                 </div>
               </div>

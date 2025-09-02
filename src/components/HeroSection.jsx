@@ -1,3 +1,14 @@
+import {
+  Instagram,
+  Linkedin,
+  Facebook,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+
+} from "lucide-react";
+
 import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
@@ -16,15 +27,28 @@ export const HeroSection = () => {
             </span>
             <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
               {" "}
-              Gyeltshen
+              
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I design intelligent systems and craft seamless digital experiences. 
-            From building autonomous robots and AI-powered applications to creating responsive, 
-            user-friendly web platforms, I merge innovation with functionality. 
-          </p>
+          <h2 className="text-lg md:text-3xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          Soon to be - AI Developer and Robotics Engineer
+          </h2>
+
+          <div className="pt-8">
+              <h4 className="font-medium mb-4"> Connect With Me</h4>
+              <div className="flex space-x-4 justify-center">
+                <a href="https://www.linkedin.com/in/norbu-gyeltshen-484ba61b9/" target="_blank">
+                  <Linkedin />
+                </a>
+                <a href="https://www.instagram.com/nor_gyel03/" target="_blank">
+                  <Instagram />
+                </a>
+                <a href="https://www.facebook.com/norbu.gyeltshen.9678/" target="_blank">
+                  <Facebook />
+                </a>
+              </div>
+            </div>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">

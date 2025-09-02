@@ -1,44 +1,65 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 const skills = [
-  // -------------------- Programming & Web Development --------------------
+  // -------------------- Programming Languages --------------------
   { name: "Python", level: 90, category: "Languages" },
   { name: "C/C++", level: 88, category: "Languages" },
   { name: "Java", level: 75, category: "Languages" },
-  { name: "JavaScript/TypeScript", level: 80, category: "Web Dev" },
-  { name: "ReactJS", level: 78, category: "Web Dev" },
-  { name: "NodeJS", level: 72, category: "Web Dev" },
-  { name: "Tailwind CSS", level: 80, category: "Web Dev" },
-  { name: "MySQL/PHP", level: 78, category: "Web Dev" },
+  { name: "MATLAB", level: 80, category: "Languages" },
+  { name: "R", level: 70, category: "Languages" },
+
+  // -------------------- Web & Databases --------------------
+  { name: "JavaScript / TypeScript", level: 80, category: "Web & Databases" },
+  { name: "ReactJS", level: 82, category: "Web & Databases" },
+  { name: "Node.js / Express.js", level: 75, category: "Web & Databases" },
+  { name: "Flask / FastAPI", level: 85, category: "Web & Databases" },
+  { name: "HTML / CSS / Tailwind", level: 88, category: "Web & Databases" },
+  { name: "MySQL", level: 80, category: "Web & Databases" },
+  { name: "MongoDB", level: 72, category: "Web & Databases" },
+  { name: "PHP", level: 70, category: "Web & Databases" },
 
   // -------------------- AI & Machine Learning --------------------
-  { name: "Machine & Deep Learning", level: 85, category: "AI/ML" },
-  { name: "Computer Vision (OpenCV, YOLO)", level: 82, category: "AI/ML" },
+  { name: "Machine & Deep Learning", level: 88, category: "AI/ML" },
+  { name: "Computer Vision (OpenCV, YOLO)", level: 85, category: "AI/ML" },
+  { name: "Data Analysis (Pandas, NumPy)", level: 90, category: "AI/ML" },
+  { name: "TensorFlow / PyTorch", level: 82, category: "AI/ML" },
   { name: "NLP & Generative AI", level: 78, category: "AI/ML" },
-  { name: "TensorFlow / PyTorch", level: 80, category: "AI/ML" },
-  { name: "Scikit-learn", level: 85, category: "AI/ML" },
-
+  
   // -------------------- Robotics & Embedded Systems --------------------
-  { name: "Robotics (ROS, Gazebo, CoppeliaSim)", level: 70, category: "Robotics" },
-  { name: "Arduino & ESP32", level: 80, category: "Robotics" },
-  { name: "Raspberry Pi", level: 78, category: "Robotics" },
-  { name: "3D Design & Printing (Fusion 360, SolidWorks)", level: 75, category: "Robotics" },
+  { name: "ROS (Robot Operating System)", level: 80, category: "Robotics" },
+  { name: "Gazebo / CoppeliaSim", level: 78, category: "Robotics" },
+  { name: "Arduino / ESP32 / Raspberry Pi", level: 85, category: "Robotics" },
+  { name: "3D Design (Fusion 360, SolidWorks)", level: 75, category: "Robotics" },
 
-  // -------------------- Tools --------------------
-  { name: "Git/GitHub", level: 78, category: "Tools" },
-  { name: "AWS", level: 75, category: "Tools" },
-  { name: "Docker", level: 70, category: "Tools" },
-  { name: "Linux OS/ Kali Linux", level: 82, category: "Tools" },
-  { name: "UiPath Studio", level: 80, category: "Tools" },
+  // -------------------- Cloud & DevOps --------------------
+  { name: "AWS", level: 78, category: "Cloud & DevOps" },
+  { name: "Docker", level: 75, category: "Cloud & DevOps" },
+  { name: "Git / GitHub", level: 85, category: "Cloud & DevOps" },
+  { name: "Vercel", level: 80, category: "Cloud & DevOps" },
+  
+  // -------------------- Software & Tools --------------------
+  { name: "Linux OS / Kali Linux", level: 82, category: "Software & Tools" },
+  { name: "VS Code", level: 90, category: "Software & Tools" },
+  { name: "Jupyter Notebook", level: 88, category: "Software & Tools" },
+  { name: "UiPath Studio (RPA)", level: 80, category: "Software & Tools" },
 
   // -------------------- Soft Skills --------------------
-  { name: "Problem-Solving", level: 90, category: "SoftSkills" },
-  { name: "Team Collaboration", level: 85, category: "SoftSkills" },
-  { name: "Leadership", level: 82, category: "SoftSkills" },
-  { name: "Creativity & Innovation", level: 85, category: "SoftSkills" },
+  { name: "Problem-Solving", level: 90, category: "Soft Skills" },
+  { name: "Team Collaboration", level: 88, category: "Soft Skills" },
+  { name: "Leadership", level: 85, category: "Soft Skills" },
+  { name: "Creativity & Innovation", level: 85, category: "Soft Skills" },
 ];
 
-const categories = ["All", "Languages", "Web Dev", "AI/ML", "Robotics", "Tools", "SoftSkills"];
+const categories = [
+    "All", 
+    "Languages", 
+    "Web & Databases", 
+    "AI/ML", 
+    "Robotics", 
+    "Cloud & DevOps", 
+    "Software & Tools", 
+    "Soft Skills"
+];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
